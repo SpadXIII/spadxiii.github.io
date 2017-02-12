@@ -12,14 +12,12 @@ $bp-small-max:  $bp-medium - 0.1px;
   box-sizing: border-box;
 }
 
-html {
+html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   min-width: 320px;
   background-color: #222;
   color: #eee;
@@ -30,6 +28,7 @@ body {
     max-width: 1200px;
     width: 98%;
     position: relative;
+    padding-top: calc(100px + 1em);
   }
 }
 
@@ -37,12 +36,34 @@ p {
   margin: 0 0 0.5em 0;
 }
 
-header h1 {
-  display: flex;
-  align-items: center;
+header {
+  background-color: #222;
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  z-index: 10;
 
-  img {
-    margin-right: .3em;
+  h1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 1.5em;
+
+    img {
+      margin-right: .3em;
+    }
+  }
+
+  &.collapse {
+    height: 70px;
+
+    h1 {
+      font-size: 1em;
+
+      img {
+        width: 68px;
+      }
+    }
   }
 }
 
