@@ -36,6 +36,10 @@ p {
   margin: 0 0 0.5em 0;
 }
 
+a {
+  color: #ccc;
+}
+
 header {
   background-color: #222;
   position: fixed;
@@ -74,10 +78,20 @@ article {
   display: flex;
   flex-flow: column-reverse;
   align-content: stretch;
-
-  border-bottom: solid 1px #fff;
-  padding-bottom: 1em;
   margin-bottom: 1em;
+
+  h2 {
+    font-size: 1.1em;
+    margin: 0 0 .3em 0;
+
+    text-align: center;
+  }
+
+  @include breakpoint($bp-small $bp-medium) {
+    h2 {
+      margin-top: 1em;
+    }
+  }
 
   div {
     margin-right: 15px;
@@ -120,4 +134,9 @@ article {
       max-width: 60px;
     }
   }
+}
+
+article + article {
+  border-top: solid 1px #fff;
+  padding-top: 1em;
 }
