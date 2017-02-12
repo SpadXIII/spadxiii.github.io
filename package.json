@@ -1,0 +1,19 @@
+{
+  "name": "spadxiii",
+  "version": "0.0.1",
+  "description": "SpadXIII Portfolio",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpadXIII/spadxiii.github.io.git"
+  },
+  "author": "SpadXIII",
+  "license": "MIT",
+  "homepage": "https://github.com/SpadXIII/spadxiii.github.io#readme"
+}

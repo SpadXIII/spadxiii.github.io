@@ -1,0 +1,94 @@
+@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+$bp-large:      1200px;
+
+$bp-medium:     800px;
+$bp-medium-max: $bp-large - 0.1px;
+
+$bp-small:      0;
+$bp-small-max:  $bp-medium - 0.1px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  background-color: #222;
+  color: #eee;
+  font-size: 1.3em;
+
+  > div {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 98%;
+    position: relative;
+  }
+}
+
+p {
+  margin: 0 0 0.5em 0;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: .3em;
+  }
+}
+
+article {
+  clear: both;
+  display: flex;
+  flex-flow: column-reverse;
+  align-content: stretch;
+
+  border-bottom: solid 1px #fff;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+
+  div {
+    margin-right: 15px;
+  }
+
+  div.screenshot {
+    flex: 4;
+    order: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  div.previews {
+    flex: 1;
+    order: 2;
+
+    img {
+      width: 100%;
+      max-width: 60px;
+    }
+  }
+
+  div.info {
+    flex: 3;
+    order: 3;
+  }
+
+  @include breakpoint($bp-medium) {
+    flex-flow: row wrap-reverse;
+
+    div.previews {
+      max-width: 60px;
+    }
+  }
+}
