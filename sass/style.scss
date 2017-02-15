@@ -50,10 +50,19 @@ header {
   h1 {
     margin: 0 auto;
     max-width: 1200px;
+    min-width: 320px;
 
     display: flex;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1em;
+
+    @include breakpoint($bp-medium $bp-medium-max) {
+      font-size: 1.3em;
+    }
+
+    @include breakpoint($bp-large) {
+      font-size: 1.5em;
+    }
 
     img {
       margin-right: .3em;
@@ -61,7 +70,7 @@ header {
   }
 
   &.collapse {
-    height: 70px;
+    height: 80px;
 
     h1 {
       font-size: 1em;

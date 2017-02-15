@@ -32,13 +32,20 @@ header {
   header h1 {
     margin: 0 auto;
     max-width: 1200px;
+    min-width: 320px;
     display: flex;
     align-items: center;
-    font-size: 1.5em; }
+    font-size: 1em; }
+    @media (min-width: 800px) and (max-width: 1199.9px) {
+      header h1 {
+        font-size: 1.3em; } }
+    @media (min-width: 1200px) {
+      header h1 {
+        font-size: 1.5em; } }
     header h1 img {
       margin-right: .3em; }
   header.collapse {
-    height: 70px; }
+    height: 80px; }
     header.collapse h1 {
       font-size: 1em; }
       header.collapse h1 img {
