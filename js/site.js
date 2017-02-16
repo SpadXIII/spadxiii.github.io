@@ -9,13 +9,31 @@
   collapseNavbar();
 
   $('.projects article').each(function(index, $item) {
-    var $full = $('.screenshot img', $item);
+    var $fullImage = $('.screenshot img', $item);
+    var $fullVideo = $('.screenshot video', $item);
     var $previews = $('.previews a', $item);
     $previews.on('click', function(event) {
       event.preventDefault();
-      $('img', $previews).removeClass('active');
-      $('img', this).addClass('active');
-      $full.attr('src', this.href);
+      $previews.removeClass('active');
+      var $link = $(this);
+      $link.addClass('active');
+      if ($link.hasClass('video')) {
+        $fullImage.addClass('hidden');
+
+        $fullVideo.find('source').remove();
+        $('<source type="video/mp4" src="' + this.href + '"/>').appendTo($fullVideo);
+        $('<source type="video/webm" src="' + this.href.replace(/\.mp4$/, '.webm') + '"/>').appendTo($fullVideo);
+
+        $fullVideo.removeClass('hidden');
+        $fullVideo[0].currentTime = 0;
+        $fullVideo[0].play();
+      }
+      else {
+        $fullVideo.addClass('hidden');
+
+        $fullVideo[0].pause();
+        $fullImage.removeClass('hidden').attr('src', this.href);
+      }
     });
   });
 

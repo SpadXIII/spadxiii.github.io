@@ -82,12 +82,22 @@ header {
   }
 }
 
+section + section,
+footer {
+  margin-top: 2em;
+}
+
+article + article {
+  border-top: solid 1px #888;
+  padding-top: 2em;
+}
+
 article {
   clear: both;
   display: flex;
   flex-flow: column-reverse;
   align-content: stretch;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 
   h2 {
     font-size: 1.1em;
@@ -110,7 +120,7 @@ article {
     flex: 4;
     order: 1;
 
-    img {
+    img, video {
       width: 100%;
     }
   }
@@ -120,13 +130,38 @@ article {
     order: 2;
     text-align: center;
 
-    img {
-      width: 100%;
-      max-width: 60px;
+    a {
+      position: relative;
+      display: inline-block;
       border: solid 2px transparent;
+      padding: 0;
+      font-size: 0;
 
       &.active {
         border: solid 1px #eee;
+
+        @include breakpoint($bp-medium) {
+          &:before {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right:10px solid #fff;
+            content: '';
+            display: block;
+            position: absolute;
+            left: -11px;
+            top: 18px;
+            color: #fff;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        max-width: 60px;
+        margin: 0;
+        padding: 0;
       }
     }
   }
@@ -145,7 +180,6 @@ article {
   }
 }
 
-article + article {
-  border-top: solid 1px #fff;
-  padding-top: 1em;
+.hidden {
+  display: none;
 }
