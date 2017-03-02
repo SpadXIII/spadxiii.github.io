@@ -8,6 +8,12 @@ $bp-medium-max: $bp-large - 0.1px;
 $bp-small:      0;
 $bp-small-max:  $bp-medium - 0.1px;
 
+$itemSpacing: 3em;
+$backgroundColor: #222;
+$fontColor: #eee;
+$linkColor: #ccc;
+$borderColor: #888;
+
 * {
   box-sizing: border-box;
 }
@@ -19,8 +25,8 @@ html, body {
 
 body {
   min-width: 320px;
-  background-color: #222;
-  color: #eee;
+  background-color: $backgroundColor;
+  color: $fontColor;
   font-size: 1.3em;
 
   > div {
@@ -37,11 +43,11 @@ p {
 }
 
 a {
-  color: #ccc;
+  color: $linkColor;
 }
 
 header {
-  background-color: #222;
+  background-color: $backgroundColor;
   position: fixed;
   height: 100px;
   width: 100%;
@@ -84,12 +90,12 @@ header {
 
 section + section,
 footer {
-  margin-top: 2em;
+  margin-top: $itemSpacing;
 }
 
-article + article {
-  border-top: solid 1px #888;
-  padding-top: 2em;
+article {
+  border-top: solid 1px $borderColor;
+  padding-top: $itemSpacing;
 }
 
 article {
@@ -97,7 +103,7 @@ article {
   display: flex;
   flex-flow: column-reverse;
   align-content: stretch;
-  margin-bottom: 2em;
+  margin-bottom: $itemSpacing;
 
   h2 {
     font-size: 1.1em;
@@ -146,13 +152,13 @@ article {
             height: 0;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-right: 10px solid #fff;
+            border-right: 10px solid $borderColor;
             content: '';
             display: block;
             position: absolute;
             left: -11px;
             top: 18px;
-            color: #fff;
+            color: $borderColor;
           }
         }
       }
@@ -181,15 +187,15 @@ article {
 }
 
 footer .social-media {
-  border-top: solid 1px #888;
+  border-top: solid 1px $borderColor;
   text-align: center;
   padding: 2em 0;
 
   a {
     display: inline-block;
-    width: 38px;
-    height: 38px;
-    margin-right: 5px;
+    width: 52px;
+    height: 52px;
+    margin-left: 8px;
     font-size: 0;
     text-indent: -999px;
     overflow: hidden;
