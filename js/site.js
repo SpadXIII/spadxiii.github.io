@@ -29,9 +29,10 @@
         $fullVideo[0].play();
       }
       else {
-        $fullVideo.addClass('hidden');
-
-        $fullVideo[0].pause();
+        if ($fullVideo.length) {
+          $fullVideo.addClass('hidden');
+          $fullVideo[0].pause();
+        }
         $fullImage.removeClass('hidden').attr('src', this.href);
       }
     });
