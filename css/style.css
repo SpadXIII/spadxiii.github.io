@@ -118,5 +118,24 @@ article {
       article div.previews {
         max-width: 60px; } }
 
+footer .social-media {
+  border-top: solid 1px #888;
+  text-align: center;
+  padding: 2em 0; }
+  footer .social-media a {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    margin-right: 5px;
+    font-size: 0;
+    text-indent: -999px;
+    overflow: hidden;
+    background-size: cover;
+    background-clip: border-box; }
+    footer .social-media a.twitter {
+      background-image: url("/img/icons/twitter.svg"); }
+    footer .social-media a.linkedin {
+      background-image: url("/img/icons/linked_in.svg"); }
+
 .hidden {
   display: none; }

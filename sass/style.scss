@@ -146,7 +146,7 @@ article {
             height: 0;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-right:10px solid #fff;
+            border-right: 10px solid #fff;
             content: '';
             display: block;
             position: absolute;
@@ -176,6 +176,32 @@ article {
 
     div.previews {
       max-width: 60px;
+    }
+  }
+}
+
+footer .social-media {
+  border-top: solid 1px #888;
+  text-align: center;
+  padding: 2em 0;
+
+  a {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    margin-right: 5px;
+    font-size: 0;
+    text-indent: -999px;
+    overflow: hidden;
+    background-size: cover;
+    background-clip: border-box;
+
+    &.twitter {
+      background-image: url('/img/icons/twitter.svg');
+    }
+
+    &.linkedin{
+      background-image: url('/img/icons/linked_in.svg');
     }
   }
 }
